@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,72 +8,66 @@
     <title>Document</title>
 
     <style>
+        body {
+            height: 100vh;
+            display: flex;
+        }
 
-    body {
-        
-        
-        height: 100vh;
-        display: flex;
-     
-    }
 
-    main {
-        
-        width: 1300px;
-        height: 400px;
-        padding: 20px;
-        background: rgb(212, 209, 209);
-    }
+        main {
+            width: 1300px;
+            height: 400px;
+            padding: 20px;
+            background: rgb(233, 231, 231);
+        }
 
-    .btn {
-        padding-top: 20px;
-        display: flex;
-        justify-content: center;
+        .btn {
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
 
-    }
+        h1,
+        h3 {
+            text-align: center;
+        }
 
-    h1, h3 {
-        text-align: center;
-    }
+        #start-game {
+            display: inline-block;
+            width: 200px;
+            height: 80px;
+            border-radius: 25px;
+            background: rgb(105, 105, 206);
+            color: white;
+            font-size: 20px;
+            border: solid 0;
+        }
 
-    #start-game {
-        display: inline-block;
-        width: 200px;
-        height: 80px;
-        border-radius: 25px;
-        background: rgb(105, 105, 206);
-        color: white;
-        font-size: 20px;
-        border: solid 0;
-        
-    }
+        #inp {
 
-    #inp{
+            display: inline-block;
+            width: 50%;
+            height: 40px;
+            font-size: 25px;
 
-        display: inline-block;
-        width: 50%;
-        height: 40px;
-        font-size: 25px;
+        }
 
-    }
+        #guess {
+            display: inline-block;
+            width: 20%;
+            height: 46px;
+            background: rgb(105, 105, 206);
+            font-size: 25px;
+            border-radius: 10px;
+        }
 
-    #guess {
-        display: inline-block;
-        width: 20%;
-        height: 46px;
-        background: rgb(105, 105, 206);
-        font-size: 25px;
-        border-radius: 10px;
-    }
-    #header{
-        font-size: 90px;
-    }
+        #header {
+            font-size: 90px;
+        }
 
-    #displaytext {
-        font-size: 25px;
-    }
-
-    
+        #displaytext {
+            font-size: 25px;
+        }
     </style>
 </head>
 
@@ -84,17 +79,17 @@
         <main>
 
             <header>
-            <h1 id="header">GEUSS ME!</h1>
-   
-        </header>
-        <div >
-        <h3 id="displaytext"> Are you ready to play!?</h3>
-        </div>
-       
-        <div class="btn">
+                <h1 id="header">GEUSS ME!</h1>
+
+            </header>
+            <div>
+                <h3 id="displaytext"> Are you ready to play!?</h3>
+            </div>
+
+            <div class="btn">
                 <button id="start-game" onclick="Start()">Start Game</button>
-                <input id= "inp" type="number">
-                <button id= "guess" onclick="userguessNumber()"> Guess</button>
+                <input id="inp" type="number">
+                <button id="guess" onclick="userguessNumber()"> Guess</button>
             </div>
 
         </main>
@@ -102,65 +97,75 @@
 
 
     <script>
-        let header  = document.getElementById("header");
-        let displaytext=document.getElementById("displaytext");
+        let header = document.getElementById("header");
+        let displaytext = document.getElementById("displaytext");
 
-    let startGame = document.getElementById("start-game");
-    let inp = document.getElementById("inp");
-    let guessbtn = document.getElementById("guess");
-   
-    inp.style.display="none";
-    guessbtn.style.display="none";
-   
-    
+        let startGame = document.getElementById("start-game");
+        let inp = document.getElementById("inp");
+        let guessbtn = document.getElementById("guess");
 
-    function Start(){
-       startGame.style.display="none";
-        inp.style.display="inline-block";
-        guessbtn.style.display="inline-block";
-        header.innerHTML ="Geuss Me";
-         displaytext.innerHTML =`I'm thinking of a Number between 1 and 10, can you guess it?`;
-      
- 
-    }
+        inp.style.display = "none";
+        guessbtn.style.display = "none";
 
-    function creatRandomNumber(min, max){
-        return Math.floor(Math.random() * (max-min +1) ) + min
-    };
-    let random = creatRandomNumber(1,10);
-    console.log(random);
-    let attemp = 0;
-    function userguessNumber(){
-        attemp++;
 
-        if(attemp === 3){
-            header.innerHTML= "Sorry User"
-            displaytext.innerHTML= ` the number is indeed: ${random} you got this number after ${attemp} attemps`;
-        inp.style.display="none";
-        guessbtn.style.display="none";
-        startGame.style.display= "inline-block";
-        attemp=0;
-    }
-        
-        
-        
-        
-        if(inp.value == random){
-            header.innerHTML= "Succsses";
-            if(attemp ===1){ 
-        displaytext.innerHTML= ` you couldn't guess the right number in ${attemp} attempt the number was : ${random}`; 
-    }else {
-        displaytext.innerHTML= ` you couldn't guess the right number in ${attemp} attempts the number was : ${random}`; 
-    }
-    
-        inp.style.display="none";
-        guessbtn.style.display="none";
-        startGame.style.display= "inline-block";
-        attemp=0;
-    }
-        inp.value = "";
-    }
-    
+
+        function Start() {
+            startGame.style.display = "none";
+            inp.style.display = "inline-block";
+            guessbtn.style.display = "inline-block";
+            header.innerHTML = "Geuss Me";
+            displaytext.innerHTML = `I'm thinking of a Number between 1 and 10, can you guess it?`;
+
+
+        }
+
+        function creatRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        };
+        let random = creatRandomNumber(1, 10);
+        console.log(random);
+        let attemp = 0;
+
+        function userguessNumber() {
+            attemp++;
+
+
+
+
+
+            if (inp.value == random) {
+                header.innerHTML = "Succsses";
+                if (attemp === 1) {
+                    displaytext.innerHTML =
+                        ` the number is indeed: ${random} you got this number after ${attemp} attempt`;
+                } else {
+                    displaytext.innerHTML =
+                        ` the number is indeed: ${random} you got this number after ${attemp} attemps`;
+                }
+
+                inp.style.display = "none";
+                guessbtn.style.display = "none";
+                startGame.style.display = "inline-block";
+                attemp = 0;
+            }
+            else if (attemp < 3){
+                header.innerHTML="Sorry User"
+                displaytext.innerHTML=`You couldn't guess the right number ${3-attemp} left`
+            }
+
+            if (attemp === 3) {
+                header.innerHTML = "Sorry User";
+                displaytext.innerHTML =
+                    ` you couldn't guess the right number in ${attemp} attempts the number was : ${random}`;
+
+                inp.style.display = "none";
+                guessbtn.style.display = "none";
+                startGame.style.display = "inline-block";
+                attemp = 0;
+            }
+            inp.value = "";
+        }
     </script>
 </body>
+
 </html>
