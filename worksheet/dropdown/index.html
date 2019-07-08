@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dropdown</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #header {
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            color: #fff;
+            font-size: 110px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #navbar {
+            width: 100%;
+            height: 8vh;
+            
+        }
+
+        ul.parent > li  {
+           
+            list-style-type: none;
+            text-align: center;
+            float: left;
+            width: 20%;
+             box-sizing: border-box;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+            padding: 24px;
+            color: #fff;
+            cursor: pointer;
+            border-right: 1px solid #fff;
+            background: rgb(73, 141, 219);
+
+        }
+
+        li {
+            list-style-type: none;   
+        }
+
+        ul.child {
+            display: none;
+            width: 100% !important;
+            margin-top: 40px;
+            
+        }
+
+        ul.child li {
+            padding: 10px;        
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id=header> Best Movies </div>
+
+    <nav id="navbar">
+
+        <ul class="parent">
+
+            <li>
+                     Martian 
+
+                <ul class="child">
+                    <li>Matt Damon</li>
+                    <li>Jessica Chastain</li>
+                    <li>Kristen Wiig</li>
+                </ul>
+            </li>
+
+
+            <li>
+                    Avengers End Game 
+
+                <ul class="child">
+                        <li>Matt Damon</li>
+                        <li>Jessica Chastain</li>
+                        <li>Kristen Wiig</li>
+                    </ul>
+            </li>
+
+
+
+            <li>
+
+                     The Martian 
+                <ul class="child">
+                    <li>Matt Damon</li>
+                    <li>Jessica Chastain</li>
+                    <li>Kristen Wiig</li>
+                </ul>
+            </li>
+
+
+            <li>
+                  Avengers End Game
+                <ul class="child">
+                        <li>Matt Damon</li>
+                        <li>Jessica Chastain</li>
+                        <li>Kristen Wiig</li>
+                    </ul>
+            </li>
+
+
+            <li>
+                    Avengers End Game 
+             <ul class="child">
+                    <li>Matt Damon</li>
+                    <li>Jessica Chastain</li>
+                    <li>Kristen Wiig</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
