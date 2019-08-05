@@ -34,5 +34,7 @@ return data[0];
 };
 
 
+
+
 export {getCity, weather};
 
